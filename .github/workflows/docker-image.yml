@@ -27,4 +27,5 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: push to dockerhub
       run: docker tag pavanimage pavandocker143/pavanimage
-    - run: docker push pavandocker143/pavanimage
+    - uses: uses: docker/build-push-action@v3
+      run: docker push pavandocker143/pavanimage
