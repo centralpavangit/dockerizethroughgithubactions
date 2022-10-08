@@ -15,9 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag $pavan
-      env: 
-        pavan: "pavan:$(data +%s)"
+      run: docker build -t pavanimage .
   push:
     runs-on: ubuntu-latest
     steps:
@@ -27,4 +25,4 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: push to dockerhub
-      run: docker push $pavan pavandocker143/$pavan
+      run: docker push pavanimage pavandocker143/pavanimage
