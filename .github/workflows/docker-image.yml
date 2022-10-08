@@ -24,6 +24,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
   push:
     runs-on: ubuntu-latest
+    needs: login
     steps:
       - run: docker tag pavanimage pavandocker143/image34
       - run: docker push pavandocker143/image34
