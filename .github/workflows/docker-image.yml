@@ -16,8 +16,8 @@ jobs:
      runs-on: ubuntu-latest
      needs: build
      steps:
-      - run: docker login 
-      - run: ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: docker login
+        run: ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
   push:
     runs-on: ubuntu-latest
     needs: login
