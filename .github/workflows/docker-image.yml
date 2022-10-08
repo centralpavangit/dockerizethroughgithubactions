@@ -26,5 +26,4 @@ jobs:
     runs-on: ubuntu-latest
     needs: login
     steps:
-      - run: docker tag pavanimage:3
       - run: docker push pavandocker143/pavanimage:3
