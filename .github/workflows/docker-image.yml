@@ -27,4 +27,4 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: push to dockerhub
-      run: docker push ${{pavan}} pavandocker143/${{pavan}}
+      run: docker push ${{pavan}} pavandocker143/$pavan
